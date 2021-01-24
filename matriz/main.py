@@ -69,4 +69,6 @@ def consecutive(data, stepsize=1):
     return False
 
 if __name__ == '__main__':    
+    matrix = generate_matrix()    
+    search(matrix)
     doctest.testmod()
