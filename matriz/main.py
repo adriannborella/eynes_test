@@ -26,9 +26,9 @@ def find_sequence(matrix, is_transpose=False):
     """
     Busca por las filas y columnas de la matriz si existe una secuencia de 4 elementos consecutivos
     >>> find_sequence([[4, 0, 1, 2, 3],[4, 1, 3, 4, 3],[2, 4, 3, 0, 4],[1, 2, 3, 3, 4],[1, 4, 3, 1, 3]])
-    Secuencia encontrada en la posición (01 04) (fila , columna)
+    Secuencia encontrada en la posición ([0, 1] [0, 4]) (fila , columna)
     >>> find_sequence([[4, 4, 2, 1, 1],[0, 1, 4, 2, 4],[1, 3, 4, 5, 6],[2, 4, 0, 3, 1],[3, 3, 4, 4, 3]], True)
-    Secuencia encontrada en la posición (12 42) (fila , columna)
+    Secuencia encontrada en la posición ([1, 2] [4, 2]) (fila , columna)
     """
     cnt = 0
     for record in matrix:
@@ -40,13 +40,13 @@ def find_sequence(matrix, is_transpose=False):
 def print_position(position, cnt, is_transpose):
     """
     >>> print_position(1,2,False)
-    '21'
+    '[2, 1]'
     >>> print_position(1,2,True)
-    '12'
+    '[1, 2]'
     """
     nline = position if not is_transpose else cnt
     ncolumn = position if is_transpose else cnt
-    return f"{ncolumn}{nline}"
+    return f"[{ncolumn}, {nline}]"
 
 def consecutive(data):
     """
