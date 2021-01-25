@@ -48,7 +48,7 @@ def print_position(position, cnt, is_transpose):
     ncolumn = position if is_transpose else cnt
     return f"{ncolumn}{nline}"
 
-def consecutive(data, stepsize=1):
+def consecutive(data):
     """
         Busca una secuencia de 4 elementos consecutivos
     
@@ -57,7 +57,7 @@ def consecutive(data, stepsize=1):
     >>> consecutive([0, 1, 2, 3, 5])
     [0, 3]
     """
-    arr_consecutive = np.split(data, np.where(np.diff(data) != stepsize)[0]+1)
+    arr_consecutive = np.split(data, np.where(np.diff(data) != 1)[0]+1)
     index = 0
     for record in arr_consecutive:
         len_rec = len(record)
